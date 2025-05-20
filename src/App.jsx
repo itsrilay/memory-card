@@ -1,9 +1,9 @@
-import PokemonContainer from "./PokemonContainer"
+import Game from "./Game"
 
 export default function App() {
   return (
     <main>
-      <PokemonContainer />
+      <Game/>
     </main>
   )
 }
