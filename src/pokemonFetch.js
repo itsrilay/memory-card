@@ -8,9 +8,9 @@ const getPokemon = async (id) => {
   const url = 'https://pokeapi.co/api/v2/pokemon/' + id;
 
   const response = await fetch(url);
-  const {species, sprites} = await response.json();
+  const {name, sprites} = await response.json();
 
-  return {name: species.name, image: sprites.front_default};
+  return {id: id, name: name, image: sprites.front_default};
 }
 
 export const getRandomPokemonList = async (count) => {

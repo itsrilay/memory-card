@@ -1,14 +1,55 @@
 :root {
+  --bg-color: #004643;
+  --card-bg-color: #abd1c6;
+  --p-color: #001e1d;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--bg-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  max-width: 800px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: fit-content;
+}
+
+.pokemon{
+  color: var(--p-color);
+  text-transform: capitalize;
+}
+
+.card-button {
+  border: 0;
+  background-color: #abd1c6;
+}
+
+.card-button:hover {
+  cursor: pointer;
+  background-color: #abd1c6cc;
+}
+
+.card-button:active {
+  background-color: #abd1c699;
 }
