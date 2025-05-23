@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+* {
+  font-family: "VT323", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --bg-color: #004643;
   --card-bg-color: #abd1c6;
   --p-color: #001e1d;
 
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -23,28 +30,70 @@ main {
   gap: 3em;
 }
 
-.pokemon-list {
+.result {
+  font-size: 52px;
+}
+
+.scoreboard {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score {
+  font-size: 52px;
+}
+
+.restart {
+  background-color: rgb(249, 188, 96);
+  color: #001e1d;
+  border: 0;
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 26px;
+}
+
+.restart:hover {
+  cursor: pointer;
+  background-color: rgb(249, 188, 96, 0.8);
+}
+
+.restart:active {
+  background-color: rgb(249, 188, 96, 0.6);
+}
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   max-width: 800px;
+  gap: 1em;
 }
 
 .card {
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: fit-content;
+}
+
+.img-container {
+  width: 100%;
+  height: 96px;
 }
 
 .pokemon{
+  padding: 5px;
   color: var(--p-color);
   text-transform: capitalize;
+  font-size: 20px;
+  overflow-wrap: break-word;
 }
 
 .card-button {
   border: 0;
-  background-color: #abd1c6;
+  border-radius: 10px;
+  background-color: var(--card-bg-color);
+  width: 100%;
+  max-height: fit-content;
 }
 
 .card-button:hover {

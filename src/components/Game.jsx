@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getRandomPokemonList } from "./pokemonFetch";
+import { getRandomPokemonList } from "../pokemonFetch";
 import Scoreboard from "./Scoreboard";
 import PokemonContainer from "./PokemonContainer";
 import GameResults from "./GameResults";
@@ -11,6 +11,7 @@ export default function Game() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [hasWon, setHasWon] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleRestart = async() => {
     setClickedIds([]);
@@ -59,7 +60,9 @@ export default function Game() {
   }
 
   const fetchData = async () => {
+    setLoading(true);
     const list = await getRandomPokemonList(listSize);
+    setLoading(false);
 
     return list;
   };
@@ -73,6 +76,7 @@ export default function Game() {
 
     return () => {
       isMounted = false;
+      setLoading(false);
     };
 
   }, [listSize]);
@@ -85,6 +89,7 @@ export default function Game() {
         <PokemonContainer 
           pokemonList={pokemonList} 
           handleClick={handleClick}
+          loading={loading}
         />
       )}
       
