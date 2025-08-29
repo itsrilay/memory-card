@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 * {
-  font-family: "VT323", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'VT323', system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -10,6 +10,14 @@
   --bg-color: #004643;
   --card-bg-color: #abd1c6;
   --p-color: #001e1d;
+  --easy-color: #1eff00;
+  --easy-dark-color: #14af00;
+  --medium-color: #eeff00;
+  --medium-dark-color: #b7c400;
+  --hard-color: #ff8827;
+  --hard-dark-color: #d36e1b;
+  --play-color: #2ec4b6;
+  --play-dark-color: #219e91;
 
   line-height: 1.5;
   font-weight: 400;
@@ -23,10 +31,94 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-main {
+#root {
+  height: 100vh;
+}
+
+.menu-container,
+.game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* Menu */
+.menu-container {
+  gap: 3em;
+}
+
+.title {
+  font-size: 72px;
+}
+
+.difficulty-select {
+  font-size: 24px;
+}
+
+.difficulty-container {
+  display: flex;
+  gap: 1em;
+}
+
+.difficulty {
+  color: var(--p-color);
+  transition: transform 0.1s ease;
+}
+
+.easy:hover,
+.medium:hover,
+.hard:hover {
+  transform: scale(0.96);
+}
+
+.easy:active,
+.medium:active,
+.hard:active {
+  transform: scale(1.05);
+}
+
+.easy {
+  background-color: var(--easy-color);
+}
+
+.easy:hover {
+  background-color: var(--easy-dark-color);
+}
+
+.medium {
+  background-color: var(--medium-color);
+}
+
+.medium:hover {
+  background-color: var(--medium-dark-color);
+}
+
+.hard {
+  background-color: var(--hard-color);
+}
+
+.hard:hover {
+  background-color: var(--hard-dark-color);
+}
+
+.play {
+  width: 100px;
+  color: var(--p-color);
+  background-color: var(--play-color);
+  transition: transform 0.2s ease;
+}
+
+.play:hover {
+  transform: scale(1.05);
+}
+
+.play:active {
+  background-color: var(--play-dark-color);
+}
+
+/* Game */
+.game-container {
+  height: 100%;
   gap: 3em;
 }
 
@@ -44,32 +136,75 @@ main {
   font-size: 52px;
 }
 
-.restart {
-  background-color: rgb(249, 188, 96);
-  color: #001e1d;
+.btn {
   border: 0;
   border-radius: 10px;
   padding: 5px;
   font-size: 26px;
 }
 
-.restart:hover {
+.btn:hover {
   cursor: pointer;
-  background-color: rgb(249, 188, 96, 0.8);
 }
 
+.return {
+  align-self: flex-start;
+  margin-left: 2em;
+  max-width: fit-content;
+  background-color: var(--play-color);
+}
+
+.return:hover {
+  background-color: var(--play-dark-color);
+}
+
+.return,
+.restart {
+  color: #001e1d;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.return:active,
 .restart:active {
-  background-color: rgb(249, 188, 96, 0.6);
+  transform: scale(1.05);
+}
+
+.restart {
+  background-color: rgb(249, 188, 96);
+}
+
+.restart:hover {
+  background-color: rgb(249, 188, 96, 0.8);
 }
 
 .pokemon-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  max-width: 800px;
-  gap: 1em;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  width: 100%;
+  max-width: 1200px;
+  gap: 10px;
+}
+
+/* Card */
+@keyframes appear-grow {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.show {
+  animation-name: appear-grow;
+  animation-duration: 1s;
 }
 
 .card {
+  height: 150px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -80,7 +215,7 @@ main {
   height: 96px;
 }
 
-.pokemon{
+.pokemon {
   padding: 5px;
   color: var(--p-color);
   text-transform: capitalize;
@@ -93,7 +228,7 @@ main {
   border-radius: 10px;
   background-color: var(--card-bg-color);
   width: 100%;
-  max-height: fit-content;
+  height: 100%;
 }
 
 .card-button:hover {
