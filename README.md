@@ -48,15 +48,19 @@
 
 ## Project Overview
 
-![Product Screen Shot][product-screenshot]
+![Game Screen Shot][game-screenshot]
 
-This is the menu where you select the desired difficulty for the game, which changes the number of cards:
+**PokeMemory** is a fun and interactive memory card game where you match Pokémon cards without clicking the same card twice. The twist? After every click, the cards reshuffle, adding a unique challenge as you try to remember which Pokémon you’ve already seen. It’s the perfect game for testing your memory, reflexes, and Pokémon knowledge!
 
-- **Easy** - 6 cards;
-- **Medium** - 10 cards;
-- **Hard** - 15 cards;
+**Key Features:**
 
-Start the game by clicking **Play** and make sure to only click each Pokémon card once, good luck!
+- **Difficulty Levels**: Play in **Easy**, **Medium**, or **Hard** mode with varying numbers of cards.
+
+- **Pokémon Cards**: Every round is fueled by Pokémon data fetched randomly from PokéAPI, so each session offers a fresh experience with different Pokémon to memorize.
+
+- **Dynamic Gameplay**: The cards reshuffle after each click, making the game progressively harder as you go.
+
+Whether you're a Pokémon fan or just looking for a fun memory challenge, PokeMemory is sure to keep you entertained as you strive to complete each round without making a mistake.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,6 +122,30 @@ Make sure you're ready for the installation process.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+<!-- USAGE EXAMPLES -->
+
+## Usage
+
+![Product Screen Shot][product-screenshot]
+
+This is the menu where you select the desired difficulty for the game, which changes the number of cards:
+
+- **Easy** - 6 cards;
+- **Medium** - 10 cards;
+- **Hard** - 15 cards;
+
+**How to Play:**
+
+- Click Play to start the game.
+
+- Your goal is to click each Pokémon card only once. After each click, the cards will reshuffle, making it harder to remember which cards you've already clicked.
+
+- If you manage to click all the cards without repeating any, you win the game!
+
+Good luck, and challenge yourself with all three difficulty levels!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- LICENSE -->
 
 ## License
@@ -133,6 +161,7 @@ This project is distributed under the MIT License - see [LICENSE][license-url] f
 [linkedin-url]: https://linkedin.com/in/ruis2003
 [license-shield]: https://img.shields.io/github/license/itsrilay/pokememory.svg?style=for-the-badge
 [license-url]: https://github.com/itsrilay/pokememory/blob/master/LICENSE
+[game-screenshot]: src/assets/game.png
 [product-screenshot]: src/assets/screenshot.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
