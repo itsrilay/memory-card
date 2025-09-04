@@ -13,7 +13,7 @@
     <img src="src/assets/icon.svg" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">CV App</h3>
+<h3 align="center">PokeMemory</h3>
 
   <p align="center">
     A memory card game using Pokémon. The goal is to click every card displayed on the screen only once to win. Challenge yourself with 3 difficulty settings and try to succeed!
